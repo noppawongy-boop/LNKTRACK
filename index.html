@@ -229,7 +229,7 @@
       { id: "scg", name: "SCG Express", label: "SCG Express", short: "SC", color: "#d71920", direct: false, url: () => "https://www.scgexpress.co.th/tracking/" },
       { id: "iel", name: "Inter Express Logistics", label: "Inter Express", short: "IE", color: "#008c95", direct: false, url: () => "https://tracking.iel.co.th/" },
       { id: "dhl-ecommerce", name: "DHL eCommerce", label: "DHL eCommerce", short: "DE", color: "#ffcc00", url: n => `https://www.dhl.com/th-en/home/tracking/tracking-ecommerce.html?tracking-id=${n}` },
-      { id: "lex", name: "Lazada Express", label: "Lazada / LEX", short: "LX", color: "#1a4db3", direct: false, url: () => "https://tracker.lel.asia/" },
+      { id: "lex", name: "Lazada Express", label: "Lazada / LEX", short: "LX", color: "#1a4db3", direct: false, url: () => "https://lex.th/tracking" },
       { id: "cj", name: "CJ Logistics", label: "CJ Logistics", short: "CJ", color: "#006ecd", url: n => `https://www.cjlogistics.com/en/tool/parcel/tracking?gnbInvcNo=${n}` },
       { id: "central-express", name: "Central Express", label: "Central Express", short: "CE", color: "#111827", direct: false, url: () => "https://www.google.com/search?q=Central+Express+tracking" }
     ];
@@ -259,6 +259,7 @@
       if (/^(SPX|SPE|SPXTN|THSHP|THSPX)[A-Z0-9]{6,}$/.test(code)) return carrierById("spx");
       if (/^TH(?=.*[A-Z])[A-Z0-9]{10,}$/.test(code)) return carrierById("spx");
       if (/^(CE|CEN|CENTRAL)[A-Z0-9]{6,}$/.test(code)) return carrierById("central-express");
+      if (/^(LEX|LEXPU)[A-Z0-9]{6,}$/.test(code)) return carrierById("lex");
       if (/^(GM|LX|RX|CN|HK|SG|MY)[A-Z0-9]{8,}$/.test(code) && code.length >= 12) return carrierById("dhl-ecommerce");
       if (/^(DHL|JJD|JD|JVGL|JVG|3S)[A-Z0-9]{7,}$/.test(code)) return carrierById("dhl");
       if (/^\d{10,11}$/.test(code)) return carrierById("dhl");
