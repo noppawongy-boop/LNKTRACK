@@ -256,6 +256,7 @@
       if (/^1Z[A-Z0-9]{16}$/.test(code)) return carrierById("ups");
       if (/^[A-Z]{2}\d{9}TH$/.test(code)) return carrierById("thailand-post");
       if (/^TH\d{10,}$/.test(code)) return carrierById("flash");
+      if (/^TH\d{4,}[A-Z0-9]{4,}$/.test(code)) return carrierById("flash");
       if (/^(SPX|SPE|SPXTN|THSHP|THSPX)[A-Z0-9]{6,}$/.test(code)) return carrierById("spx");
       if (/^TH(?=.*[A-Z])[A-Z0-9]{10,}$/.test(code)) return carrierById("spx");
       if (/^(CE|CEN|CENTRAL)[A-Z0-9]{6,}$/.test(code)) return carrierById("central-express");
